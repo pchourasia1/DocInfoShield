@@ -1,0 +1,36 @@
+{
+  "name": "docinfoshield",
+  "version": "1.0.0",
+  "description": "Word add-in that redacts sensitive information using a FastAPI + Microsoft Presidio backend",
+  "private": true,
+  "config": {
+    "app_to_debug": "word",
+    "app_type_to_debug": "desktop",
+    "dev_server_port": 3100
+  },
+  "scripts": {
+    "prestart": "node scripts/generate-certs.js && node scripts/cleanup-port.js",
+    "start": "concurrently -n tsc,web,api,word -c blue,green,magenta,yellow \"npm run watch\" \"npm run dev-server\" \"npm run api\" \"office-addin-debugging start manifest.xml\"",
+    "prestart:servers": "node scripts/generate-certs.js && node scripts/cleanup-port.js",
+    "start:servers": "concurrently -n tsc,web,api -c blue,green,magenta \"npm run watch\" \"npm run dev-server\" \"npm run api\"",
+    "sideload": "office-addin-dev-settings sideload manifest.xml desktop --app Word --document Document-To-Be-Redacted.docx",
+    "dev-server":"http-server -S -C cert.pem -K key.pem --cors -c-1 -a localhost . -p 3100",
+    "api": "node scripts/api.js start",
+    "setup:api": "node scripts/api.js setup",
+    "test:api": "node scripts/api.js test",
+    "watch": "tsc -w",
+    "build": "tsc",
+    "stop": "office-addin-debugging stop manifest.xml && node scripts/cleanup-port.js",
+    "cleanup": "node scripts/cleanup-port.js",
+    "validate": "office-addin-manifest validate manifest.xml"
+  },
+  "devDependencies": {
+    "@types/office-js": "^1.0.377",
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1",
+    "office-addin-debugging": "^5.1.6",
+    "office-addin-dev-certs": "^1.13.5",
+    "office-addin-manifest": "^1.13.6",
+    "typescript": "^5.4.2"
+  }
+}

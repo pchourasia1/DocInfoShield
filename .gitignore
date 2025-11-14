@@ -1,0 +1,7 @@
+node_modules/
+compiledJS/
+cert.pem
+key.pem
+backend/.venv/
+__pycache__/
+.pytest_cache/

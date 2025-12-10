@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DocInfoShield</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main id="app-body">
+        <header class="brand">
+            <img src="assets/word.png" alt="" class="brand-icon" />
+            <div>
+                <h1>DocInfoShield</h1>
+                <p class="tagline">Find and redact sensitive information</p>
+            </div>
+        </header>
+
+        <section class="card">
+            <h2>Status</h2>
+            <ul class="status-list">
+                <li id="trackingStatus" class="status-item">Checking Track Changes…</li>
+                <li id="apiStatus" class="status-item">Checking detection service…</li>
+            </ul>
+        </section>
+
+        <button id="redactButton" class="redact-button">Redact Document</button>
+
+        <div id="result" aria-live="polite"></div>
+
+        <footer class="footer">
+            Detection by <a href="https://microsoft.github.io/presidio/" target="_blank" rel="noopener">Microsoft Presidio</a> + spaCy
+        </footer>
+    </main>
+    <script type="module" src="compiledJS/taskpane.js"></script>
+</body>
+
+</html>

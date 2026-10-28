@@ -16,7 +16,7 @@ pane applies the results inside Word. Document text never leaves `localhost`.
 
 [![DocInfoShield demo video](https://img.youtube.com/vi/raSQUB77CD4/hqdefault.jpg)](https://youtu.be/raSQUB77CD4)
 
-▶️ **[Watch the 7-minute demo on YouTube](https://youtu.be/raSQUB77CD4)**: architecture, a live redaction of
+▶️ **[Watch the demo on YouTube](https://youtu.be/raSQUB77CD4)**: architecture, a live redaction of
 the sample document, and how context-aware scoring works.
 
 ## Architecture

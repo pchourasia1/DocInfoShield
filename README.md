@@ -12,6 +12,13 @@ Detection runs in a local **Python FastAPI** service powered by
 - A small **TypeScript** task
 pane applies the results inside Word. Document text never leaves `localhost`.
 
+## Demo
+
+[![DocInfoShield demo video](https://img.youtube.com/vi/raSQUB77CD4/hqdefault.jpg)](https://youtu.be/raSQUB77CD4)
+
+▶️ **[Watch the 7-minute demo on YouTube](https://youtu.be/raSQUB77CD4)**: architecture, a live redaction of
+the sample document, and how context-aware scoring works.
+
 ## Architecture
 
 ![DocInfoShield architecture and workflow](Architecture_WorkFlow.png)
